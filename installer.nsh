@@ -7,7 +7,7 @@
   !define MUI_FINISHPAGE_SHOWREADME_FUNCTION HekCreateDesktopShortcut
 
   Function HekCreateDesktopShortcut
-    CreateShortCut "$DESKTOP\${PRODUCT_FILENAME}.lnk" "$INSTDIR\${APP_EXECUTABLE_FILENAME}" "" "$INSTDIR\${APP_EXECUTABLE_FILENAME}" 0
+    CreateShortCut "$DESKTOP\${PRODUCT_FILENAME}.lnk" "$INSTDIR\${PRODUCT_FILENAME}.exe" "" "$INSTDIR\${PRODUCT_FILENAME}.exe" 0
   FunctionEnd
 !endif
 
