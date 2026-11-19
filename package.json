@@ -1,0 +1,59 @@
+{
+  "name": "hekpixle",
+  "productName": "Hekpixle",
+  "version": "0.14.0",
+  "description": "Hekpixle - personal AI agent: computer use (screen + mouse + keyboard), browser automation, web search, files, terminal, code execution, MCP, skills, cron, sub-agents, memory, Telegram",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis"
+  },
+  "dependencies": {
+    "undici": "^6.0.0"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.hekpixle.app",
+    "productName": "Hekpixle",
+    "files": [
+      "*.js",
+      "index.html",
+      "*.css",
+      "*.woff2",
+      "icon.*",
+      "icon-512.png",
+      "skill-*.md",
+      "node_modules/undici/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": false,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Hekpixle",
+      "runAfterFinish": true,
+      "installerIcon": "icon.ico",
+      "uninstallerIcon": "icon.ico",
+      "installerHeaderIcon": "icon.ico",
+      "deleteAppDataOnUninstall": false,
+      "include": "installer.nsh",
+      "artifactName": "Hekpixle-Setup-${version}.${ext}"
+    }
+  }
+}
